@@ -6,7 +6,7 @@ tags: [blogs]     # TAG names should always be lowercase
 ---
 
 
-# Fuck you
+# Hello World
 
 
-fuck you
+My first post
