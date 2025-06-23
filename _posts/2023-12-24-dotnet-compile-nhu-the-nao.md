@@ -3,9 +3,6 @@ title: .NET Compile Như Thế Nào?
 date: 2023-12-24 12:00:00 +0800
 categories: [How it works, .NET framework]
 tags: [.net, compilation, c#]     # TAG names should always be lowercase
-image:
-  path: assets/img/2024-01-13-blog-as-code.webp
-  alt: Blog-as-Code
 ---
 
 Các ngôn ngữ thuộc .NET framework như C#, VB,..khi được compile sẽ tạo ra **ngôn ngữ trung gian** (MSIL – Microsft Intermediate Language). Ngôn ngữ này sau đó sẽ được runtime environment của .NET (Common Language Runtime) dịch về mã máy.
