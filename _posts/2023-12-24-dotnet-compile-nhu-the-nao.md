@@ -1,6 +1,6 @@
 ---
 title: .NET Compile Như Thế Nào?
-date: 2023-12-24 12:00:00 +0800
+date: 2023-12-24 12:00:00 +0700
 categories: [How it works, .NET framework]
 tags: [.net, compilation, c#]     # TAG names should always be lowercase
 ---
