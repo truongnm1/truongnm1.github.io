@@ -2257,7 +2257,7 @@ summary {
 header .post-desc,#toc-bar .label,#search-results a,h1,h2,h3,h4,h5 {
     color: var(--heading-color);
     font-weight: 400;
-    font-family: Lato,"Microsoft Yahei",sans-serif;
+    font-family: "Open Sans","Microsoft Yahei",sans-serif;
     scroll-margin-top: 3.5rem
 }
 
@@ -3871,7 +3871,7 @@ blockquote.prompt-danger::before {
 }
 
 kbd {
-    font-family: Lato,sans-serif;
+    font-family: "Open Sans",sans-serif;
     display: inline-block;
     vertical-align: middle;
     line-height: 1.3rem;
@@ -4269,7 +4269,7 @@ div.nolineno td:first-child .lineno,div.language-plaintext td:first-child .linen
 }
 
 #notification .toast-body {
-    font-family: Lato,sans-serif;
+    font-family: "Open Sans",sans-serif;
     line-height: 1.25rem
 }
 
@@ -4336,7 +4336,7 @@ div.nolineno td:first-child .lineno,div.language-plaintext td:first-child .linen
 }
 
 #toc-popup .header .label {
-    font-family: Lato,"Microsoft Yahei",sans-serif
+    font-family: "Open Sans","Microsoft Yahei",sans-serif
 }
 
 #toc-popup button>i {
@@ -4406,7 +4406,7 @@ div.nolineno td:first-child .lineno,div.language-plaintext td:first-child .linen
 #toc-popup #toc-popup-content {
     overflow: auto;
     max-height: calc(100vh - 12rem);
-    font-family: Lato,"Microsoft Yahei",sans-serif;
+    font-family: "Open Sans","Microsoft Yahei",sans-serif;
     margin-bottom: -2rem
 }
 
@@ -5072,7 +5072,7 @@ search i {
 
 .pagination {
     color: var(--text-color);
-    font-family: Lato,sans-serif;
+    font-family: "Open Sans",sans-serif;
     justify-content: space-evenly
 }
 
@@ -5424,7 +5424,7 @@ header h1+.post-meta {
 
 #toc-solo-trigger .label {
     font-size: 1rem;
-    font-family: Lato,"Microsoft Yahei",sans-serif
+    font-family: "Open Sans","Microsoft Yahei",sans-serif
 }
 
 #toc-solo-trigger:hover {
@@ -5714,7 +5714,7 @@ header h1+.post-meta {
 
 #archives .date.day {
     font-size: 85%;
-    font-family: Lato,sans-serif
+    font-family: "Open Sans",sans-serif
 }
 
 #archives a {
