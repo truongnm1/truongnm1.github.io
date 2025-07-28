@@ -9,8 +9,63 @@
 ';
 
 /* append your custom style below */
+.content {
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+}
 
-/* fonts */
+h1 {
+  font-weight: 700;
+  font-family: 'Merriweather', sans-serif;
+}
 
-$font-family-base: 'Noto Sans', 'Microsoft Yahei', sans-serif !default;
-$font-family-heading: 'Noto Sans', 'Microsoft Yahei', sans-serif !default;
+h2 {
+  font-weight: 700;
+  font-family: 'Merriweather', sans-serif;
+}
+
+.profile-wrapper {
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+.nav-item {
+  font-family: 'Chakra Petch', sans-serif;
+  font-style: bold;
+}
+
+.highlighter-rouge.language-plaintext {
+  font-family: 'Chakra Petch', monospace;
+  font-size: 16px;
+}
+
+.access {
+  font-family: 'Chakra Petch', monospace;
+  font-size: 20px;
+}
+
+#toc-wrapper {
+  font-family: 'Chakra Petch', monospace;
+  font-size: 20px;
+}
+
+#breadcrumb {
+  font-family: 'Chakra Petch', monospace;
+}
+
+.post-meta {
+  font-family: 'Chakra Petch', monospace;
+}
+
+.license-wrapper {
+  font-family: 'Chakra Petch', monospace;
+}
+
+#tail-wrapper {
+  font-family: 'Chakra Petch', monospace;
+}
+
+.form-control {
+  font-family: 'Chakra Petch', monospace;
+}
