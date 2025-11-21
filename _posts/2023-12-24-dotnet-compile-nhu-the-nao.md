@@ -27,3 +27,4 @@ CLR phân tích những thông tin từ các header của file PE để quyết 
 [https://learn.microsoft.com/en-us/dotnet/standard/clr](https://learn.microsoft.com/en-us/dotnet/standard/clr)
 <br>
 [https://learn.microsoft.com/en-us/dotnet/standard/managed-execution-process](https://learn.microsoft.com/en-us/dotnet/standard/managed-execution-process)
+

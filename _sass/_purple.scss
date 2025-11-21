@@ -1,0 +1,230 @@
+@mixin purple {
+  color-scheme: dark;
+  --main-bg: rgb(20 15 30);
+  --mask-bg: rgb(40 35 55);
+  --main-border-color: rgb(35 30 50);
+  --text-color: rgb(180 170 200);
+  --text-muted-color: rgb(100 90 120);
+  --text-muted-highlight-color: rgb(130 120 150);
+  --heading-color: rgb(190 180 210);
+  --label-color: rgb(120 110 140);
+  --blockquote-border-color: rgb(50 45 65);
+  --blockquote-text-color: rgb(100 90 120);
+  --link-color: rgb(120 100 190);
+  --link-underline-color: rgb(70 60 110);
+  --button-bg: rgb(30 25 45);
+  --btn-border-color: rgb(45 40 60);
+  --btn-backtotop-color: var(--text-color);
+  --btn-backtotop-border-color: rgb(30 25 40);
+  --card-header-bg: rgb(35 30 50);
+  --checkbox-color: rgb(90 80 110);
+  --checkbox-checked-color: var(--link-color);
+  --img-bg: radial-gradient(circle, rgb(20 15 30) 0%, rgb(35 30 50) 100%);
+  --shimmer-bg: linear-gradient(
+    90deg,
+    rgb(255 255 255 / 0%) 0%,
+    rgb(40 35 55 / 40%) 50%,
+    rgb(255 255 255 / 0%) 100%
+  );
+  --site-title-color: rgb(120 110 140);
+  --site-subtitle-color: rgb(100 90 120);
+  --sidebar-bg: rgb(25 20 40);
+  --sidebar-border-color: rgb(35 30 50);
+  --sidebar-muted-color: rgb(100 90 120);
+  --sidebar-active-color: rgb(200 190 220 / 95%);
+  --sidebar-hover-bg: rgb(35 30 50);
+  --sidebar-btn-bg: rgb(30 25 45);
+  --sidebar-btn-color: rgb(120 110 140);
+  --avatar-border-color: rgb(160 150 180 / 90%);
+  --topbar-bg: rgb(20 15 30 / 64%);
+  --topbar-text-color: var(--text-color);
+  --search-border-color: rgb(40 35 55);
+  --search-icon-color: rgb(90 80 110);
+  --input-focus-border-color: rgb(120 100 190);
+  --post-list-text-color: rgb(180 170 200);
+  --btn-patinator-text-color: var(--text-color);
+  --btn-paginator-hover-color: rgb(35 30 50);
+  --toc-highlight: rgb(130 110 200);
+  --toc-popup-border-color: rgb(40 35 55);
+  --tag-hover: rgb(35 30 50);
+  --tb-odd-bg: rgb(30 25 45);
+  --tb-even-bg: rgb(35 30 50);
+  --tb-border-color: var(--tb-odd-bg);
+  --footnote-target-bg: rgb(100 80 180);
+  --btn-share-color: rgb(100 90 120);
+  --btn-share-hover-color: rgb(160 150 180);
+  --card-bg: rgb(25 20 40);
+  --card-hover-bg: rgb(40 35 55);
+  --card-shadow: rgb(20 15 30 / 72%) 0 6px 18px 0,
+    rgb(130 120 150 / 24%) 0 0 0 1px;
+  --kbd-wrap-color: rgb(90 80 110);
+  --kbd-text-color: rgb(180 170 200);
+  --kbd-bg-color: rgb(30 25 45);
+  --prompt-text-color: rgb(180 170 200 / 75%);
+  --prompt-tip-bg: rgb(30 45 40 / 64%);
+  --prompt-tip-icon-color: rgb(80 120 100 / 81%);
+  --prompt-info-bg: rgb(30 40 65 / 80%);
+  --prompt-info-icon-color: rgb(80 100 180);
+  --prompt-warning-bg: rgb(65 50 30 / 88%);
+  --prompt-warning-icon-color: rgb(180 130 70 / 80%);
+  --prompt-danger-bg: rgb(65 30 30 / 80%);
+  --prompt-danger-icon-color: rgb(180 60 60);
+  --tag-border: rgb(40 35 55);
+  --tag-shadow: rgb(30 25 45);
+  --dash-color: rgb(50 45 65);
+  --search-tag-bg: rgb(35 30 50);
+  --categories-border: rgb(40 35 55 / 50%);
+  --categories-hover-bg: rgb(50 45 65);
+  --categories-icon-hover-color: rgb(200 190 220);
+  --timeline-node-bg: rgb(130 120 160);
+  --timeline-color: rgb(50 45 65);
+  --timeline-year-dot-color: var(--timeline-color);
+  --language-border-color: rgb(35 30 50);
+  --highlight-bg-color: rgb(20 15 30);
+  --highlighter-rouge-color: rgb(160 140 200);
+  --highlight-lineno-color: rgb(100 90 120);
+  --inline-code-bg: rgb(255 255 255 / 5%);
+  --code-color: rgb(170 160 190);
+  --code-header-text-color: rgb(90 80 110);
+  --code-header-muted-color: rgb(35 30 50);
+  --code-header-icon-color: rgb(80 70 100);
+  --clipboard-checked-color: rgb(80 120 80);
+  --filepath-text-color: rgb(180 170 200);
+}
+
+.light {
+  display: none;
+}
+
+/* Categories */
+.categories.card,
+.list-group-item {
+  background-color: var(--card-bg);
+}
+
+.categories {
+  .card-header {
+    background-color: var(--card-header-bg);
+  }
+
+  .list-group-item {
+    border-left: none;
+    border-right: none;
+    padding-left: 2rem;
+    border-color: var(--categories-border);
+
+    &:last-child {
+      border-bottom-color: var(--card-bg);
+    }
+  }
+}
+
+#disqus_thread {
+  color-scheme: none;
+}
+
+/* Explicit hover rule for .card-wrapper.card in PURPLE mode */
+.card-wrapper.card:hover {
+  background: var(--card-hover-bg);
+}
+
+/* Syntax highlight theme */
+.highlight .gp {
+  color: rgb(130 120 150);
+}
+.highlight table td {
+  padding: 5px;
+}
+.highlight table pre {
+  margin: 0;
+}
+.highlight,
+.highlight .w {
+  color: rgb(180 170 200);
+  background-color: rgb(20 15 30);
+}
+.highlight .err {
+  color: rgb(20 15 30);
+  background-color: rgb(130 60 80);
+}
+.highlight .c,
+.highlight .ch,
+.highlight .cd,
+.highlight .cm,
+.highlight .cpf,
+.highlight .c1,
+.highlight .cs {
+  color: rgb(100 90 120);
+}
+.highlight .cp,
+.highlight .nt {
+  color: rgb(160 140 200);
+}
+.highlight .o,
+.highlight .ow,
+.highlight .p,
+.highlight .pi {
+  color: rgb(180 170 200);
+}
+.highlight .gi {
+  color: rgb(100 130 100);
+}
+.highlight .gd {
+  color: rgb(180 100 100);
+  background-color: rgb(40 20 30);
+}
+.highlight .gh {
+  color: rgb(130 120 180);
+  background-color: rgb(20 15 30);
+  font-weight: bold;
+}
+.highlight .k,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .kv,
+.highlight .sa {
+  color: rgb(140 120 180);
+}
+.highlight .kc,
+.highlight .kt,
+.highlight .kd {
+  color: rgb(150 130 190);
+}
+.highlight .s,
+.highlight .sb,
+.highlight .sc,
+.highlight .dl,
+.highlight .sd,
+.highlight .s2,
+.highlight .sh,
+.highlight .sx,
+.highlight .s1,
+.highlight .ss {
+  color: rgb(120 140 120);
+}
+.highlight .sr {
+  color: rgb(120 150 140);
+}
+.highlight .si,
+.highlight .se {
+  color: rgb(150 120 180);
+}
+.highlight .nn,
+.highlight .nc,
+.highlight .no {
+  color: rgb(160 140 200);
+}
+.highlight .na {
+  color: rgb(130 120 180);
+}
+.highlight .m,
+.highlight .mb,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .il,
+.highlight .mo,
+.highlight .mx {
+  color: rgb(120 140 120);
+}

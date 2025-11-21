@@ -16,7 +16,7 @@ timezone: Asia/Bangkok
 
 title: blaz1ken # the main title
 
-tagline: simply blogging...  # it will display as the subtitle
+tagline: simply blogging... # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   A personal blog about technical and cybersecurity things or perspectives on the an adventure called LIFE.
@@ -35,7 +35,7 @@ social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Truong Nguyen
-  email: truongnm2003@gmail.com # change to your email address
+  # email: truongnm2003@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
     # - https://twitter.com/username # change to your Twitter homepage
@@ -194,7 +194,11 @@ defaults:
       permalink: /:title/
 
 sass:
+  # sass_dir: _sass
   style: compressed
+  # load_paths:
+  #   - _sass
+  #   - /usr/local/rvm/gems/default/gems/jekyll-theme-chirpy-7.3.0/_sass
 
 compress_html:
   clippings: all

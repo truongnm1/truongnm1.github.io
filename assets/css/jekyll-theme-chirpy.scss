@@ -8,7 +8,56 @@
 {%- endif -%}
 ';
 
+@use '_purple' as purple;
+
 /* append your custom style below */
+@media (prefers-color-scheme: light) {
+  html[data-mode='purple'] {
+    @include purple.purple;
+    [class^='prompt-'] {
+      --link-underline-color: rgb(70 60 110);
+    }
+  }
+  html[data-mode='light'] .card-wrapper.card:hover {
+    background: var(--card-hover-bg); /* From _light.scss */
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html[data-mode='purple'] {
+    @include purple.purple;
+    [class^='prompt-'] {
+      --link-underline-color: rgb(70 60 110);
+    }
+  }
+  html[data-mode='dark'] .card-wrapper.card:hover {
+    background: var(--card-hover-bg); /* From _dark.scss */
+  }
+}
+
+#mode-toggle {
+  .icon-light,
+  .icon-dark,
+  .icon-purple {
+    display: none;
+  }
+  [data-mode='light'] & .icon-light {
+    display: inline;
+  }
+  [data-mode='dark'] & .icon-dark {
+    display: inline;
+  }
+  [data-mode='purple'] & .icon-purple {
+    display: inline;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
 .content {
   font-family: 'Chakra Petch', sans-serif;
   font-weight: 400;
@@ -16,56 +65,281 @@
   font-size: 18px;
 }
 
-h1 {
-  font-weight: 700;
-  font-family: 'Merriweather', sans-serif;
-}
-
-h2 {
-  font-weight: 700;
-  font-family: 'Merriweather', sans-serif;
-}
-
-.profile-wrapper {
-  font-family: 'Chakra Petch', sans-serif;
-}
-
-.nav-item {
-  font-family: 'Chakra Petch', sans-serif;
-  font-style: bold;
-}
-
 .highlighter-rouge.language-plaintext {
   font-family: 'Chakra Petch', monospace;
-  font-size: 16px;
+  font-size: 18px;
 }
 
-.access {
-  font-family: 'Chakra Petch', monospace;
-  font-size: 20px;
+.post-preview {
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
-#toc-wrapper {
-  font-family: 'Chakra Petch', monospace;
-  font-size: 20px;
+.post-preview:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-#breadcrumb {
-  font-family: 'Chakra Petch', monospace;
+// Flexible hover effects for Chirpy post cards - works with light, dark, and purple themes
+#post-list {
+  .card-wrapper {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 12px;
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+
+    // Subtle gradient overlay that adapts to theme
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        135deg,
+        var(--btn-box-shadow, rgba(0, 0, 0, 0.05)) 0%,
+        transparent 50%,
+        var(--btn-box-shadow, rgba(0, 0, 0, 0.02)) 100%
+      );
+      opacity: 0;
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    &:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 12px 32px var(--main-bg, rgba(0, 0, 0, 0.15)),
+        0 4px 16px var(--btn-box-shadow, rgba(0, 0, 0, 0.1));
+      border-color: var(--link-color, #3b82f6);
+
+      &::before {
+        opacity: 1;
+      }
+
+      .card-body {
+        position: relative;
+        z-index: 2;
+      }
+
+      .card-title {
+        color: var(--link-color, #1d4ed8);
+        transform: translateX(4px);
+        text-shadow: 0 1px 2px var(--btn-box-shadow, rgba(0, 0, 0, 0.1));
+      }
+
+      .card-text {
+        opacity: 0.8;
+        transform: translateX(2px);
+        color: var(--text-muted, #6b7280);
+      }
+
+      .post-meta {
+        transform: translateY(-1px);
+
+        i {
+          color: var(--link-color, #3b82f6);
+          transform: scale(1.1) rotate(5deg);
+        }
+
+        time {
+          color: var(--text-color, #374151);
+          font-weight: 500;
+        }
+
+        .categories {
+          color: var(--link-color, #6366f1);
+          font-weight: 500;
+        }
+      }
+    }
+
+    // Active state for better interaction feedback
+    &:active {
+      transform: translateY(-3px) scale(1.005);
+      transition-duration: 0.1s;
+    }
+
+    // Smooth transitions for all elements
+    .card-title,
+    .card-text,
+    .post-meta,
+    .post-meta i,
+    .post-meta time,
+    .categories {
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    // Focus state for accessibility
+    a.post-preview:focus {
+      outline: 2px solid var(--link-color, #3b82f6);
+      outline-offset: 2px;
+      border-radius: 12px;
+    }
+  }
 }
 
-.post-meta {
-  font-family: 'Chakra Petch', monospace;
+// Theme-specific enhancements
+// Light theme specific
+[data-mode='light'] #post-list .card-wrapper:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(248, 250, 252, 0.8)
+  );
+  border-color: rgba(59, 130, 246, 0.3);
 }
 
-.license-wrapper {
-  font-family: 'Chakra Petch', monospace;
+// Dark theme specific
+[data-mode='dark'] #post-list .card-wrapper:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(31, 41, 55, 0.8),
+    rgba(17, 24, 39, 0.9)
+  );
+  border-color: rgba(8, 25, 45, 0.4);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
-#tail-wrapper {
-  font-family: 'Chakra Petch', monospace;
+// Purple theme specific
+[data-mode='purple'] #post-list .card-wrapper:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.1),
+    rgba(124, 58, 237, 0.05)
+  );
+  border-color: rgba(63, 23, 100, 0.4);
+
+  .card-title {
+    color: #7c3aed !important;
+  }
+
+  .post-meta i {
+    color: #8b5cf6 !important;
+  }
+
+  .categories {
+    color: #a855f7 !important;
+  }
 }
 
-.form-control {
-  font-family: 'Chakra Petch', monospace;
+// Fallback for older browsers or custom themes
+@supports not (color: var(--link-color)) {
+  #post-list .card-wrapper:hover {
+    .card-title {
+      color: #1d4ed8;
+    }
+
+    .post-meta i {
+      color: #3b82f6;
+    }
+
+    .categories {
+      color: #6366f1;
+    }
+  }
+}
+
+/* FIXED ARCHIVES - Remove conflicting gradients */
+
+/* Force archives container background for all themes */
+#archives,
+#archives ul,
+#archives ol,
+#archives .list-unstyled,
+.archives,
+.archive-list,
+[id*='archive'],
+[class*='archive'] {
+  background-color: var(--main-bg) !important;
+}
+
+/* Force all li elements in archives - flexible for all themes */
+#archives li,
+#archives ul li,
+#archives ol li,
+#archives .list-unstyled li,
+.archives li,
+.archive-list li,
+[id*='archive'] li,
+[class*='archive'] li {
+  border: none !important;
+
+  /* Force even rows - simple background */
+  &:nth-child(even) {
+    background-color: var(--tb-even-bg) !important;
+    background-image: none !important;
+  }
+
+  /* Force odd rows - NO GRADIENT HERE, let theme-specific ones handle it */
+  &:nth-child(odd) {
+    background-color: var(--main-bg) !important;
+    background-image: none !important; /* Clear any inherited gradients */
+  }
+}
+
+/* THEME-SPECIFIC GRADIENTS - These will now work! */
+
+/* Light theme - Extended for longer titles */
+[data-mode='light'] {
+  #archives li:nth-child(odd) {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent 5%,
+      rgba(241, 245, 249, 0.3) 20%,
+      rgba(241, 245, 249, 0.4) 30%,
+      rgba(241, 245, 249, 0.3) 60%,
+      rgba(241, 245, 249, 0.1) 75%,
+      transparent 85%,
+      transparent 100%
+    ) !important;
+  }
+
+  #archives li:nth-child(even) {
+    background-color: transparent !important;
+  }
+}
+
+/* Dark theme - Extended for longer titles */
+[data-mode='dark'] {
+  #archives li:nth-child(odd) {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent 5%,
+      rgba(51, 65, 85, 0.2) 20%,
+      rgba(51, 65, 85, 0.3) 30%,
+      rgba(51, 65, 85, 0.2) 60%,
+      rgba(51, 65, 85, 0.1) 75%,
+      transparent 85%,
+      transparent 100%
+    ) !important;
+  }
+
+  #archives li:nth-child(even) {
+    background-color: transparent !important;
+  }
+}
+
+/* Purple theme - Extended for longer titles */
+[data-mode='purple'] {
+  #archives li:nth-child(odd) {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent 5%,
+      rgba(45, 30, 65, 0.2) 20%,
+      rgba(45, 30, 65, 0.3) 30%,
+      rgba(45, 30, 65, 0.2) 60%,
+      rgba(45, 30, 65, 0.1) 75%,
+      transparent 85%,
+      transparent 100%
+    ) !important;
+  }
+
+  #archives li:nth-child(even) {
+    background-color: transparent !important;
+  }
 }
